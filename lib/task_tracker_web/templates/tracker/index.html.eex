@@ -1,0 +1,19 @@
+<div class="main">
+  <h1>Task Directory</h1>
+  <h2 align="left"><%= button "Create A New Task", to: tracker_path(@conn, :new), method: "get" %></h2>
+</div>
+
+<%= for tracker <- @tasks do %>
+      <div class="task">
+          <h3><%= tracker.name %> </h3>
+          <p>Responsible For Completing Task: <%= tracker.user.name %><p>
+          <p>Task Description: <%= tracker.description %> </p>
+          <p>Minutes Worked On Task: <%= tracker.time %> </p>
+          <p>Task Complete?: <%= tracker.completed %> </p>
+
+        <span><%= button "Show", to: tracker_path(@conn, :show, tracker), method: "get", class: "btn btn-default btn-xs" %></span>
+        <span><%= button "Edit", to: tracker_path(@conn, :edit, tracker), method: "get", class: "btn btn-default btn-xs" %></span>
+        <span><%= button "Delete", to: tracker_path(@conn, :delete, tracker), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger btn-xs" %></span>
+    </div>
+
+<% end %>

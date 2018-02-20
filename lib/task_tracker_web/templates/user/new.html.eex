@@ -1,0 +1,7 @@
+<h2>New User</h2>
+
+<%= render "form.html", Map.put(assigns, :action, user_path(@conn, :create)) %>
+
+<span><%= button "Back", to: user_path(@conn, :index), method: "get" %></span>
+
+

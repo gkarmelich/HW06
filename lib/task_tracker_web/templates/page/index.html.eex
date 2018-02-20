@@ -1,0 +1,22 @@
+<div class="main">
+  <div>
+    <h1>
+      Task Tracker: log in or create an account here 
+    </h1>
+    <%= form_tag("/session", method: :post) do %>
+      <div class="form-group">
+        Email
+        <input type="email" name="email" placeholder="enter your email address" required>
+      </div>
+
+      <div class="form-group">
+       <p> 
+         <Button class="button"> Log In </Button> 
+         <%= button "Create A New Account", to: user_path(@conn, :new), method: "get" %> 
+       </p>
+      </div>
+
+    <% end %>
+
+  </div>
+</div>

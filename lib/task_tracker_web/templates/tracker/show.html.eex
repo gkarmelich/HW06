@@ -1,0 +1,28 @@
+<h2>Show Tracker</h2>
+
+<ul>
+
+  <li>
+    <strong>Completed:</strong>
+    <%= @tracker.completed %>
+  </li>
+
+  <li>
+    <strong>Description:</strong>
+    <%= @tracker.description %>
+  </li>
+
+  <li>
+    <strong>Time:</strong>
+    <%= @tracker.time %>
+  </li>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @tracker.name %>
+  </li>
+
+</ul>
+
+<span><%= button "Edit", to: tracker_path(@conn, :edit, @tracker), method: "get" %></span>
+<span><%= button "Back", to: tracker_path(@conn, :index), method: "get" %></span>
